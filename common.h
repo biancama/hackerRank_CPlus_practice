@@ -5,5 +5,5 @@
 #ifndef HACKERRANK_CPLUS_PRACTICE_COMMON_H
 #define HACKERRANK_CPLUS_PRACTICE_COMMON_H
 void basic_data_type();
-
+void condition_statement();
 #endif //HACKERRANK_CPLUS_PRACTICE_COMMON_H

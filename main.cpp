@@ -2,6 +2,6 @@
 #include "common.h"
 int main() {
 
-    basic_data_type();
+    condition_statement();
     return 0;
 }

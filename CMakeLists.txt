@@ -3,4 +3,4 @@ project(hackerRank_CPlus_practice)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(hackerRank_CPlus_practice main.cpp 001_basic_data_type.cpp common.h)
+add_executable(hackerRank_CPlus_practice main.cpp 001_basic_data_type.cpp common.h 002_conditional_statement.cpp)
