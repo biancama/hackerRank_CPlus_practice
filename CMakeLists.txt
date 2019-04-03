@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.13)
+project(hackerRank_CPlus_practice)
+
+set(CMAKE_CXX_STANDARD 17)
+
+add_executable(hackerRank_CPlus_practice main.cpp 001_basic_data_type.cpp common.h)
