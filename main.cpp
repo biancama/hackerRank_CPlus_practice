@@ -2,6 +2,6 @@
 #include "common.h"
 int main() {
 
-    condition_statement();
+    for_loop();
     return 0;
 }
