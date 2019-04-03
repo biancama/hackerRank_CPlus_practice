@@ -2,6 +2,6 @@
 #include "common.h"
 int main() {
 
-    for_loop();
+    print_query();
     return 0;
 }
