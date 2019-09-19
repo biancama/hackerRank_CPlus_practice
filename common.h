@@ -8,4 +8,5 @@ void basic_data_type();
 void condition_statement();
 void for_loop();
 void print_query();
+std::vector<int> parseInts(std::string str);
 #endif //HACKERRANK_CPLUS_PRACTICE_COMMON_H
