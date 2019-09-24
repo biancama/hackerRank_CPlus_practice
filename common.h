@@ -9,4 +9,6 @@ void condition_statement();
 void for_loop();
 void print_query();
 std::vector<int> parseInts(std::string str);
+void attribute_parser();
+void structs();
 #endif //HACKERRANK_CPLUS_PRACTICE_COMMON_H
