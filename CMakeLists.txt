@@ -3,4 +3,4 @@ project(hackerRank_CPlus_practice)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(hackerRank_CPlus_practice main.cpp 001_basic_data_type.cpp common.h 002_conditional_statement.cpp 003_for_loop.cpp 004_function.cpp 005_pointer.cpp 006_array.cpp 007_variable_size_array.cpp 008_input_and_output.cpp 009_stringStream.cpp 010_strings.cpp 011_attribute_parser.cpp 012_structs.cpp "013_classes .cpp")
+add_executable(hackerRank_CPlus_practice main.cpp 001_basic_data_type.cpp common.h 002_conditional_statement.cpp 003_for_loop.cpp 004_function.cpp 005_pointer.cpp 006_array.cpp 007_variable_size_array.cpp 008_input_and_output.cpp 009_stringStream.cpp 010_strings.cpp 011_attribute_parser.cpp 012_structs.cpp "013_classes .cpp" 014_classes_and_objects.cpp 0014_box_it.cpp)
