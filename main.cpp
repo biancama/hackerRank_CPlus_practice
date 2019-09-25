@@ -3,7 +3,7 @@
 #include "common.h"
 int main() {
 
-    structs();
+    exceptional_server_main();
 
     return 0;
 }

@@ -11,4 +11,5 @@ void print_query();
 std::vector<int> parseInts(std::string str);
 void attribute_parser();
 void structs();
+int exceptional_server_main();
 #endif //HACKERRANK_CPLUS_PRACTICE_COMMON_H
