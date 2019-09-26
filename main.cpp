@@ -3,7 +3,7 @@
 #include "common.h"
 int main() {
 
-    exceptional_server_main();
+    virtual_function_main();
 
     return 0;
 }
