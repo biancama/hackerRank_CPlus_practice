@@ -1,71 +1,54 @@
-//
-// Created by Massimo Biancalani on 26/09/2019.
-//
-#include <new>
-using namespace std;
-template <typename K, typename V>
-struct Node {
-    K key;
-    V value;
-    Node* next;
-    Node* prev;
-};
-template <typename T, typename V>
-class Cache {
-protected:
-    unsigned int number_of_element;
-    const unsigned int cp;
-    Node<T, V>* head;
-    Node<T, V>* tail;
-    Cache(int capacity) :cp(capacity) {
-        number_of_element = 0;
-    };
-    virtual void set(const T& k, const V& v);
-    virtual T get(const T& elem) const;
-};
+#include "catch.hpp"
+#include "019_abstract_classes.cpp"
 
-class LRUCache : public Cache<int, int> {
-public:
-    LRUCache(int capacity) : Cache(capacity) {};
-    void set(const int& k, const int& v) {
-        Node<int, int>* currentNode = currentPosition(k);
-        if (currentNode != nullptr) {
-            if (currentNode->prev != nullptr) {
-                currentNode->prev->next = currentNode->next;
-            }
-            if (currentNode->next != nullptr) {
-                currentNode->next->prev = currentNode->prev;
-            } else {
-                tail = currentNode->prev;
-            }
-            if (head != nullptr) {
-                head->prev = currentNode;
-            }
-            currentNode->next = head;
-            currentNode->prev = nullptr;
-            head = currentNode;
-        } else {
-            number_of_element++;
-            currentNode = new Node<int, int>;
-            currentNode->key = k; currentNode->value = v;
-            currentNode->next = head;
-            if (head != nullptr) {
-                head->prev = currentNode;
-            }
-            head = currentNode;
+TEST_CASE("Abstract classes 01") {
+    LRUCache l(5);
+    l.set(1, 2);
 
-            if (tail == nullptr) {
-                tail = currentNode;
-            } else {
-                if (number_of_element > cp) {
-                    Node<int, int>* prevOfTail = tail->prev;
-                    if(prevOfTail != nullptr) {
-                        prevOfTail->next = nullptr;
-                    }
-                    delete(tail);
-                    tail = prevOfTail;
-                }
-            }
-        }
-    }
-};
+    int value = l.get(1);
+    REQUIRE(value == 2);
+
+    value = l.get(2);
+    REQUIRE(value == -1);
+
+}
+
+TEST_CASE("Abstract classes 02") {
+    LRUCache l(5);
+    l.set(4, 4);
+    l.set(1, 1);
+    l.set(2, 2);
+    l.set(3, 3);
+    l.set(5, 5);
+    cout << l.to_string() << endl;
+
+    int value = l.get(4);
+    cout << l.to_string() << endl;
+    REQUIRE(value == 4);
+
+    l.set(1, 1);
+    value = l.get(4);
+
+    cout << l.to_string() << endl;
+    REQUIRE(value == 4);
+
+    l.set(6, 6);
+    value = l.get(2);
+    cout << l.to_string() << endl;
+    REQUIRE(value == -1);
+
+}
+
+TEST_CASE("Abstract classes 03") {
+    LRUCache l(1);
+    int value = l.get(4);
+    REQUIRE(value == -1);
+
+    l.set(1, 1);
+    value = l.get(1);
+    REQUIRE(value == 1);
+
+    l.set(2, 2);
+    value = l.get(2);
+    REQUIRE(value == 2);
+}
