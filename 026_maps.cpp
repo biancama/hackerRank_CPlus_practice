@@ -10,7 +10,7 @@
 using namespace std;
 
 
-int main() {
+int map_main() {
     /* Enter your code here. Read input from STDIN. Print output to STDOUT */
     unsigned int q, type, value;
     string key;
