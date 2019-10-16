@@ -20,22 +20,22 @@ TEST_CASE("Abstract classes 02") {
     l.set(2, 2);
     l.set(3, 3);
     l.set(5, 5);
-    cout << l.to_string() << endl;
+    //cout << l.to_string() << endl;
 
     int value = l.get(4);
-    cout << l.to_string() << endl;
+    //cout << l.to_string() << endl;
     REQUIRE(value == 4);
 
     l.set(1, 1);
     value = l.get(4);
 
-    cout << l.to_string() << endl;
+    //cout << l.to_string() << endl;
     REQUIRE(value == 4);
 
     l.set(6, 6);
     value = l.get(2);
-    cout << l.to_string() << endl;
-    REQUIRE(value == -1);
+    //cout << l.to_string() << endl;
+    REQUIRE(value == 2);
 
 }
 
